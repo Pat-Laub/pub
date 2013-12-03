@@ -1,12 +1,9 @@
 name: pub
 dependencies:
-  analyzer: any
   args: any
-  barback: any
   collection_helpers: any
-  http: any
-  oauth2: any
   path: any
   source_maps: any
+  stack_trace: any
+  unittest: any
   yaml: any
-  watcher: any
