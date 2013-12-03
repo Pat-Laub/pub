@@ -6,19 +6,19 @@ library pub.barback;
 
 import 'dart:async';
 
-import 'package:barback/barback.dart';
+//import 'package:barback/barback.dart';
 import 'package:path/path.dart' as path;
 import 'package:stack_trace/stack_trace.dart';
 
-import 'barback/load_all_transformers.dart';
-import 'barback/pub_package_provider.dart';
-import 'barback/server.dart';
-import 'barback/sources.dart';
+//import 'barback/load_all_transformers.dart';
+//import 'barback/pub_package_provider.dart';
+//import 'barback/server.dart';
+//import 'barback/sources.dart';
 import 'log.dart' as log;
 import 'package_graph.dart';
 import 'utils.dart';
 
-export 'barback/sources.dart' show WatcherType;
+//export 'barback/sources.dart' show WatcherType;
 
 /// An identifier for a transformer and the configuration that will be passed to
 /// it.

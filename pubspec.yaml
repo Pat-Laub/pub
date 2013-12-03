@@ -2,6 +2,7 @@ name: pub
 dependencies:
   args: any
   collection_helpers: any
+  crypto: any
   path: any
   source_maps: any
   stack_trace: any

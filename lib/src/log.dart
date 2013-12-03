@@ -9,7 +9,7 @@ library pub.log;
 import 'dart:html';
 import 'dart:async' hide TimeoutException;
 
-//import 'io.dart';
+import 'io.dart';
 import 'utils.dart';
 
 typedef LogFn(Entry entry);

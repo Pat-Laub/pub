@@ -8,7 +8,7 @@ library pub.dart;
 import 'dart:async' hide TimeoutException;
 import 'dart:isolate';
 
-import 'package:analyzer/analyzer.dart';
+//import 'package:analyzer/analyzer.dart';
 import 'package:path/path.dart' as path;
 import 'package:stack_trace/stack_trace.dart';
 //import '../../../compiler/compiler.dart' as compiler;
@@ -17,8 +17,8 @@ import 'package:stack_trace/stack_trace.dart';
 //import '../../../compiler/implementation/filenames.dart'
 //   show appendSlash;
 
-import '_io.dart';
-import 'sdk.dart' as sdk;
+import 'io.dart';
+//import 'sdk.dart' as sdk;
 import 'utils.dart';
 
 /// Returns [entrypoint] compiled to JavaScript (or to Dart if [toDart] is

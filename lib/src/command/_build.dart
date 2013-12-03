@@ -6,15 +6,15 @@ library pub.command.build;
 
 import 'dart:async' hide TimeoutException;
 
-import 'package:barback/barback.dart';
+//import 'package:barback/barback.dart';
 import 'package:path/path.dart' as path;
 
-import '../barback/dart2js_transformer.dart';
-import '../barback/dart_forwarding_transformer.dart';
-import '../barback.dart' as barback;
+//import '../barback/dart2js_transformer.dart';
+//import '../barback/dart_forwarding_transformer.dart';
+//import '../barback.dart' as barback;
 import '../command.dart';
 import '../exit_codes.dart' as exit_codes;
-import '../_io.dart';
+import '../io.dart';
 import '../log.dart' as log;
 import '../utils.dart';
 

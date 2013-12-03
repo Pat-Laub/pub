@@ -24,7 +24,7 @@ import 'command/get.dart';
 import 'entrypoint.dart';
 import 'exit_codes.dart' as exit_codes;
 //import 'http.dart';
-//import 'io.dart';
+import 'io.dart';
 import 'log.dart' as log;
 import 'system_cache.dart';
 import 'utils.dart';

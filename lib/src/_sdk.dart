@@ -5,11 +5,11 @@
 /// Operations relative to the user's installed Dart SDK.
 library pub.sdk;
 
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
-import '_io.dart';
+import 'io.dart';
 import 'version.dart';
 
 /// Matches an Eclipse-style SDK version number. This is four dotted numbers

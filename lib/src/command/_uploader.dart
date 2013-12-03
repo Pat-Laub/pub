@@ -11,10 +11,10 @@ import 'package:path/path.dart' as path;
 import '../command.dart';
 import '../entrypoint.dart';
 import '../exit_codes.dart' as exit_codes;
-import '../http.dart';
-import '../_io.dart';
+//import '../http.dart';
+import '../io.dart';
 import '../log.dart' as log;
-import '../oauth2.dart' as oauth2;
+//import '../oauth2.dart' as oauth2;
 import '../source/hosted.dart';
 
 /// Handles the `uploader` pub command.

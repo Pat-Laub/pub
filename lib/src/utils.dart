@@ -8,11 +8,11 @@ library pub.utils;
 import 'dart:async';
 import "dart:collection";
 import "dart:convert";
-import 'dart:io';
+//import 'dart:io';
 import 'dart:isolate';
 import 'dart:mirrors';
 
-import "package:analyzer/analyzer.dart";
+//import "package:analyzer/analyzer.dart";
 import "package:crypto/crypto.dart";
 import 'package:path/path.dart' as path;
 import "package:stack_trace/stack_trace.dart";

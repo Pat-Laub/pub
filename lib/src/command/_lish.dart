@@ -6,16 +6,16 @@ library pub.command.lish;
 
 import 'dart:async' hide TimeoutException;
 
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
 import '../command.dart';
 import '../directory_tree.dart';
 import '../exit_codes.dart' as exit_codes;
-import '../http.dart';
-import '../_io.dart';
+//import '../http.dart';
+import '../io.dart';
 import '../log.dart' as log;
-import '../oauth2.dart' as oauth2;
-import '../sdk.dart' as sdk;
+//import '../oauth2.dart' as oauth2;
+//import '../sdk.dart' as sdk;
 import '../source/hosted.dart';
 import '../utils.dart';
 import '../validator.dart';

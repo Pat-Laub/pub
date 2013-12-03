@@ -7,14 +7,14 @@ library pub.http;
 
 import 'dart:async' hide TimeoutException;
 import 'dart:convert';
-import 'dart:io';
+//import 'dart:io';
 
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 
-import '_io.dart';
+import 'io.dart';
 import 'log.dart' as log;
-import 'oauth2.dart' as oauth2;
-import 'sdk.dart' as sdk;
+//import 'oauth2.dart' as oauth2;
+//import 'sdk.dart' as sdk;
 import 'utils.dart';
 
 // TODO(nweiz): make this configurable

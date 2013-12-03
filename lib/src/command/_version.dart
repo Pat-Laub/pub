@@ -8,7 +8,7 @@ import 'dart:async';
 
 import '../command.dart';
 import '../log.dart' as log;
-import '../sdk.dart' as sdk;
+//import '../sdk.dart' as sdk;
 
 /// Handles the `version` pub command.
 class VersionCommand extends PubCommand {

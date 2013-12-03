@@ -5,19 +5,19 @@
 library pub.oauth2;
 
 import 'dart:async' hide TimeoutException;
-import 'dart:io';
+//import 'dart:io';
 
-import 'package:oauth2/oauth2.dart';
+//import 'package:oauth2/oauth2.dart';
 import 'package:path/path.dart' as path;
 
-import 'http.dart';
-import '_io.dart';
+//import 'http.dart';
+import 'io.dart';
 import 'log.dart' as log;
-import 'safe_http_server.dart';
+//import 'safe_http_server.dart';
 import 'system_cache.dart';
 import 'utils.dart';
 
-export 'package:oauth2/oauth2.dart';
+//export 'package:oauth2/oauth2.dart';
 
 /// The pub client's OAuth2 identifier.
 final _identifier = '818368855108-8grd2eg9tj9f38os6f1urbcvsq399u8n.apps.'

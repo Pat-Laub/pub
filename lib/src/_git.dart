@@ -6,7 +6,7 @@
 library pub.git;
 
 import 'dart:async' hide TimeoutException;
-import '_io.dart';
+import 'io.dart';
 import 'log.dart' as log;
 
 /// Tests whether or not the git command-line app is available for use.

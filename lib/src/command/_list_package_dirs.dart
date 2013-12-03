@@ -11,7 +11,7 @@ import 'package:path/path.dart' as path;
 
 import '../command.dart';
 import '../exit_codes.dart' as exit_codes;
-import '../_io.dart';
+import '../io.dart';
 import '../log.dart' as log;
 
 /// Handles the `list-package-dirs` pub command.
