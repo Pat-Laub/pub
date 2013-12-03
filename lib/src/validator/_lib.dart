@@ -9,7 +9,7 @@ import 'dart:async' hide TimeoutException;
 import 'package:path/path.dart' as path;
 
 import '../entrypoint.dart';
-import '../io.dart';
+import '../_io.dart';
 import '../validator.dart';
 
 // TODO(nweiz): When issue 7196 is fixed, complain about non-Dart files in lib.

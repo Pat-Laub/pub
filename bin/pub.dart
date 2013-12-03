@@ -2,18 +2,18 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'dart:async' hide TimeoutException;
-import 'dart:io';
+//Uimport 'dart:async' hide TimeoutException;
+//import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:args/args.dart';
-import 'package:path/path.dart' as path;
+//Uimport 'package:path/path.dart' as path;
 
 import '../lib/src/command.dart';
 import '../lib/src/exit_codes.dart' as exit_codes;
-import '../lib/src/io.dart';
+//import '../lib/src/io.dart';
 import '../lib/src/log.dart' as log;
-import '../lib/src/sdk.dart' as sdk;
+//import '../lib/src/sdk.dart' as sdk;
 import '../lib/src/utils.dart';
 
 final pubArgParser = initArgParser();
@@ -30,10 +30,10 @@ void main(List<String> arguments) {
     return;
   }
 
-  if (options['version']) {
-    log.message('Pub ${sdk.version}');
-    return;
-  }
+//  if (options['version']) {
+//    log.message('Pub ${sdk.version}');
+//    return;
+//  }
 
   if (options['help']) {
     printUsage();
@@ -71,21 +71,23 @@ void main(List<String> arguments) {
       break;
   }
 
-  log.fine('Pub ${sdk.version}');
+  //log.fine('Pub ${sdk.version}');
 
-  var cacheDir;
-  if (Platform.environment.containsKey('PUB_CACHE')) {
-    cacheDir = Platform.environment['PUB_CACHE'];
-  } else if (Platform.operatingSystem == 'windows') {
-    var appData = Platform.environment['APPDATA'];
-    cacheDir = path.join(appData, 'Pub', 'Cache');
-  } else {
-    cacheDir = '${Platform.environment['HOME']}/.pub-cache';
-  }
+  //TODO(pajamallama): Connect this to sandbox directory.
+  var cacheDir = "~/.pub-cache";
+  
+//  if (Platform.environment.containsKey('PUB_CACHE')) {
+//    cacheDir = Platform.environment['PUB_CACHE'];
+//  } else if (Platform.operatingSystem == 'windows') {
+//    var appData = Platform.environment['APPDATA'];
+//    cacheDir = path.join(appData, 'Pub', 'Cache');
+//  } else {
+//    cacheDir = '${Platform.environment['HOME']}/.pub-cache';
+//  }
 
-  validatePlatform().then((_) {
+  //validatePlatform().then((_) {
     PubCommand.commands[options.command.name].run(cacheDir, options, arguments);
-  });
+  //});
 }
 
 ArgParser initArgParser() {
@@ -120,18 +122,18 @@ ArgParser initArgParser() {
 
 /// Checks that pub is running on a supported platform. If it isn't, it prints
 /// an error message and exits. Completes when the validation is done.
-Future validatePlatform() {
-  return new Future.sync(() {
-    if (Platform.operatingSystem != 'windows') return null;
-
-    return runProcess('ver', []).then((result) {
-      if (result.stdout.join('\n').contains('XP')) {
-        log.error('Sorry, but pub is not supported on Windows XP.');
-        return flushThenExit(exit_codes.USAGE);
-      }
-    });
-  });
-}
+//Future validatePlatform() {
+//  return new Future.sync(() {
+//    if (Platform.operatingSystem != 'windows') return null;
+//
+//    return runProcess('ver', []).then((result) {
+//      if (result.stdout.join('\n').contains('XP')) {
+//        log.error('Sorry, but pub is not supported on Windows XP.');
+//        return flushThenExit(exit_codes.USAGE);
+//      }
+//    });
+//  });
+//}
 
 /// Displays usage information for the app.
 void printUsage([String description = 'Pub is a package manager for Dart.']) {

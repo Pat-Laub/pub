@@ -5,10 +5,11 @@
 /// Message logging.
 library pub.log;
 
-import 'dart:io';
+//import 'dart:io';
+import 'dart:html';
 import 'dart:async' hide TimeoutException;
 
-import 'io.dart';
+//import 'io.dart';
 import 'utils.dart';
 
 typedef LogFn(Entry entry);
@@ -144,6 +145,18 @@ void process(String executable, List<String> arguments) {
   io("Spawning $executable ${arguments.join(' ')}");
 }
 
+//TODO(pajamallama): Remove this copy and leave it in io.dart.
+/// Contains the results of invoking a [Process] and waiting for it to complete.
+class PubProcessResult {
+  final List<String> stdout;
+  final List<String> stderr;
+  final int exitCode;
+
+  const PubProcessResult(this.stdout, this.stderr, this.exitCode);
+
+  bool get success => exitCode == 0;
+}
+
 /// Logs the results of running [executable].
 void processResult(String executable, PubProcessResult result) {
   // Log it all as one message so that it shows up as a single unit in the logs.
@@ -183,12 +196,12 @@ void recordTranscript() {
 /// transcript to stderr.
 void dumpTranscript() {
   if (_transcript == null) return;
-
-  stderr.writeln('---- Log transcript ----');
+  
+  window.console.debug('---- Log transcript ----');
   for (var entry in _transcript) {
     _logToStderrWithLabel(entry);
   }
-  stderr.writeln('---- End log transcript ----');
+  window.console.debug('---- End log transcript ----');
 }
 
 /// Prints [message] then slowly prints additional "..." after it until the
@@ -198,10 +211,10 @@ Future progress(String message, Future callback()) {
   if (_progressTimer != null) throw new StateError("Already in progress.");
 
   _progressMessage = '$message...';
-  stdout.write(_progressMessage);
+  window.console.log(_progressMessage);
 
   _progressTimer = new Timer.periodic(new Duration(milliseconds: 500), (_) {
-    stdout.write('.');
+    window.console.log('.');
     _progressMessage += '.';
   });
 
@@ -227,7 +240,7 @@ _stopProgress() {
   // Stop the timer.
   _progressTimer.cancel();
   _progressTimer = null;
-  stdout.writeln();
+  window.console.log("");
 
   // Add the progress message to the transcript.
   if (_transcript != null) {
@@ -281,38 +294,38 @@ void showAll() {
 
 /// Log function that prints the message to stdout.
 void _logToStdout(Entry entry) {
-  _logToStream(stdout, entry, showLabel: false);
+  _logToStream(window.console.log, entry, showLabel: false);
 }
 
 /// Log function that prints the message to stdout with the level name.
 void _logToStdoutWithLabel(Entry entry) {
-  _logToStream(stdout, entry, showLabel: true);
+  _logToStream(window.console.log, entry, showLabel: true);
 }
 
 /// Log function that prints the message to stderr.
 void _logToStderr(Entry entry) {
-  _logToStream(stderr, entry, showLabel: false);
+  _logToStream(window.console.debug, entry, showLabel: false);
 }
 
 /// Log function that prints the message to stderr with the level name.
 void _logToStderrWithLabel(Entry entry) {
-  _logToStream(stderr, entry, showLabel: true);
+  _logToStream(window.console.debug, entry, showLabel: true);
 }
 
-void _logToStream(IOSink sink, Entry entry, {bool showLabel}) {
+void _logToStream(void stream(Object), Entry entry, {bool showLabel}) {
   _stopProgress();
 
   bool firstLine = true;
   for (var line in entry.lines) {
     if (showLabel) {
       if (firstLine) {
-        sink.write('${entry.level.name}: ');
+        stream('${entry.level.name}: ');
       } else {
-        sink.write('    | ');
+        stream('    | ');
       }
     }
 
-    sink.writeln(line);
+    stream(line);
 
     firstLine = false;
   }

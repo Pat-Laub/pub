@@ -3,12 +3,12 @@
 // BSD-style license that can be found in the LICENSE file.
 
 /// Helper functionality to make working with IO easier.
-library pub.io;
+//library pub.io;
 
 import 'dart:async' hide TimeoutException;
 import 'dart:collection';
 import 'dart:convert';
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:path/path.dart' as path;
 import 'package:http/http.dart' show ByteStream;
@@ -16,7 +16,7 @@ import 'package:stack_trace/stack_trace.dart';
 
 import 'error_group.dart';
 import 'log.dart' as log;
-import 'sdk.dart' as sdk;
+//import 'sdk.dart' as sdk;
 import 'utils.dart';
 
 export 'package:http/http.dart' show ByteStream;
@@ -255,41 +255,43 @@ String createSystemTempDir() {
 /// The returned paths are guaranteed to begin with [dir].
 List<String> listDir(String dir, {bool recursive: false,
     bool includeHidden: false}) {
-  List<String> doList(String dir, Set<String> listedDirectories) {
-    var contents = <String>[];
-
-    // Avoid recursive symlinks.
-    var resolvedPath = canonicalize(dir);
-    if (listedDirectories.contains(resolvedPath)) return [];
-
-    listedDirectories = new Set<String>.from(listedDirectories);
-    listedDirectories.add(resolvedPath);
-
-    log.io("Listing directory $dir.");
-
-    var children = <String>[];
-    for (var entity in new Directory(dir).listSync()) {
-      if (!includeHidden && path.basename(entity.path).startsWith('.')) {
-        continue;
-      }
-
-      contents.add(entity.path);
-      if (entity is Directory) {
-        // TODO(nweiz): don't manually recurse once issue 4794 is fixed.
-        // Note that once we remove the manual recursion, we'll need to
-        // explicitly filter out files in hidden directories.
-        if (recursive) {
-          children.addAll(doList(entity.path, listedDirectories));
-        }
-      }
-    }
-
-    log.fine("Listed directory $dir:\n${contents.join('\n')}");
-    contents.addAll(children);
-    return contents;
-  }
-
-  return doList(dir, new Set<String>());
+  //TODO(pajamallama): Let this use chrome.fileSystem calls
+  return [];
+//  List<String> doList(String dir, Set<String> listedDirectories) {
+//    var contents = <String>[];
+//
+//    // Avoid recursive symlinks.
+//    var resolvedPath = canonicalize(dir);
+//    if (listedDirectories.contains(resolvedPath)) return [];
+//
+//    listedDirectories = new Set<String>.from(listedDirectories);
+//    listedDirectories.add(resolvedPath);
+//
+//    log.io("Listing directory $dir.");
+//
+//    var children = <String>[];
+//    for (var entity in new Directory(dir).listSync()) {
+//      if (!includeHidden && path.basename(entity.path).startsWith('.')) {
+//        continue;
+//      }
+//
+//      contents.add(entity.path);
+//      if (entity is Directory) {
+//        // TODO(nweiz): don't manually recurse once issue 4794 is fixed.
+//        // Note that once we remove the manual recursion, we'll need to
+//        // explicitly filter out files in hidden directories.
+//        if (recursive) {
+//          children.addAll(doList(entity.path, listedDirectories));
+//        }
+//      }
+//    }
+//
+//    log.fine("Listed directory $dir:\n${contents.join('\n')}");
+//    contents.addAll(children);
+//    return contents;
+//  }
+//
+//  return doList(dir, new Set<String>());
 }
 
 /// Returns whether [dir] exists on the file system. This will return `true` for
@@ -387,13 +389,15 @@ bool get runningFromSdk => Platform.script.path.endsWith('.snapshot');
 
 /// Resolves [target] relative to the path to pub's `resource` directory.
 String resourcePath(String target) {
-  if (runningFromSdk) {
-    return path.join(
-        sdk.rootDirectory, 'lib', '_internal', 'pub', 'resource', target);
-  } else {
-    return path.join(
-        path.dirname(libraryPath('pub.io')), '..', '..', 'resource', target);
-  }
+//  if (runningFromSdk) {
+//    return path.join(
+//        sdk.rootDirectory, 'lib', '_internal', 'pub', 'resource', target);
+//  } else {
+//    return path.join(
+//        path.dirname(libraryPath('pub.io')), '..', '..', 'resource', target);
+//  }
+  //TODO(pajamallama): Figure out how the certificates will work.
+  return "";
 }
 
 /// Returns the path to the root of the Dart repository. This will throw a

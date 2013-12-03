@@ -11,7 +11,7 @@ import 'package:path/path.dart' as path;
 import 'package:watcher/watcher.dart';
 
 import '../entrypoint.dart';
-import '../io.dart';
+import '../_io.dart';
 import '../package.dart';
 import '../package_graph.dart';
 

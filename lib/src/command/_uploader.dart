@@ -12,7 +12,7 @@ import '../command.dart';
 import '../entrypoint.dart';
 import '../exit_codes.dart' as exit_codes;
 import '../http.dart';
-import '../io.dart';
+import '../_io.dart';
 import '../log.dart' as log;
 import '../oauth2.dart' as oauth2;
 import '../source/hosted.dart';

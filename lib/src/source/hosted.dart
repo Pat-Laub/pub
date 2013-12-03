@@ -5,14 +5,14 @@
 library pub.source.hosted;
 
 import 'dart:async' hide TimeoutException;
-import 'dart:io' as io;
+//import 'dart:io' as io;
 import "dart:convert";
 
-import 'package:http/http.dart' as http;
+//import 'package:http/http.dart' as http;
 import 'package:path/path.dart' as path;
 
-import '../http.dart';
-import '../io.dart';
+//import '../http.dart';
+//import '../io.dart';
 import '../log.dart' as log;
 import '../package.dart';
 import '../pubspec.dart';
@@ -29,11 +29,11 @@ class HostedSource extends Source {
 
   /// Gets the default URL for the package server for hosted dependencies.
   static String get defaultUrl {
-    var url = io.Platform.environment["PUB_HOSTED_URL"];
-    if (url != null) {
-      log.fine("Got server $url from PUB_HOSTED_URL.");
-      return url;
-    }
+//    var url = io.Platform.environment["PUB_HOSTED_URL"];
+//    if (url != null) {
+//      log.fine("Got server $url from PUB_HOSTED_URL.");
+//      return url;
+//    }
 
     return "https://pub.dartlang.org";
   }

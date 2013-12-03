@@ -9,7 +9,7 @@ import 'dart:async' hide TimeoutException;
 import 'package:path/path.dart' as path;
 
 import '../entrypoint.dart';
-import '../io.dart';
+import '../_io.dart';
 import '../validator.dart';
 
 /// Validates that a package doesn't contain compiled Dartdoc

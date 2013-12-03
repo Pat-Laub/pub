@@ -8,7 +8,7 @@ import 'package:yaml/yaml.dart';
 import 'package:path/path.dart' as path;
 
 import 'barback.dart';
-import 'io.dart';
+import '_io.dart';
 import 'package.dart';
 import 'source.dart';
 import 'source_registry.dart';

@@ -17,7 +17,7 @@ import "package:crypto/crypto.dart";
 import 'package:path/path.dart' as path;
 import "package:stack_trace/stack_trace.dart";
 
-import 'dart.dart';
+//import 'dart.dart';
 
 /// A pair of values.
 class Pair<E, F> {
@@ -765,9 +765,9 @@ final _userFacingExceptions = new Set<String>.from([
 /// Returns whether [error] is a user-facing error object. This includes both
 /// [ApplicationException] and any dart:io errors.
 bool isUserFacingException(error) {
-  if (error is CrossIsolateException) {
-    return _userFacingExceptions.contains(error.type);
-  }
+//  if (error is CrossIsolateException) {
+//    return _userFacingExceptions.contains(error.type);
+//  }
 
   // TODO(nweiz): unify this list with _userFacingExceptions when issue 5897 is
   // fixed.

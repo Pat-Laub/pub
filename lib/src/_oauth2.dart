@@ -11,7 +11,7 @@ import 'package:oauth2/oauth2.dart';
 import 'package:path/path.dart' as path;
 
 import 'http.dart';
-import 'io.dart';
+import '_io.dart';
 import 'log.dart' as log;
 import 'safe_http_server.dart';
 import 'system_cache.dart';

@@ -9,7 +9,7 @@ import 'dart:async' hide TimeoutException;
 import 'package:path/path.dart' as path;
 
 import '../git.dart' as git;
-import '../io.dart';
+import '../_io.dart';
 import '../package.dart';
 import '../source.dart';
 import '../utils.dart';

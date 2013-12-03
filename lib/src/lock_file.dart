@@ -6,7 +6,7 @@ library pub.lock_file;
 
 import 'package:yaml/yaml.dart';
 
-import 'io.dart';
+import '_io.dart';
 import 'package.dart';
 import 'source_registry.dart';
 import 'utils.dart';

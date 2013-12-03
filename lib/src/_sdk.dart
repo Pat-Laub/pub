@@ -9,7 +9,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as path;
 
-import 'io.dart';
+import '_io.dart';
 import 'version.dart';
 
 /// Matches an Eclipse-style SDK version number. This is four dotted numbers

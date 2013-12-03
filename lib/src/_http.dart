@@ -11,7 +11,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import 'io.dart';
+import '_io.dart';
 import 'log.dart' as log;
 import 'oauth2.dart' as oauth2;
 import 'sdk.dart' as sdk;

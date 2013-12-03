@@ -8,8 +8,8 @@ import 'dart:async' hide TimeoutException;
 
 import 'package:path/path.dart' as path;
 
-import 'io.dart';
-import 'io.dart' as io show createTempDir;
+import '_io.dart';
+import '_io.dart' as io show createTempDir;
 import 'log.dart' as log;
 import 'package.dart';
 import 'source/git.dart';

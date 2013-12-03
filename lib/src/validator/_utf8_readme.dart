@@ -8,7 +8,7 @@ import 'dart:async' hide TimeoutException;
 import 'dart:convert';
 
 import '../entrypoint.dart';
-import '../io.dart';
+import '../_io.dart';
 import '../validator.dart';
 
 /// Validates that a package's README is valid utf-8.

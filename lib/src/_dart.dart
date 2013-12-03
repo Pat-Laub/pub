@@ -11,13 +11,13 @@ import 'dart:isolate';
 import 'package:analyzer/analyzer.dart';
 import 'package:path/path.dart' as path;
 import 'package:stack_trace/stack_trace.dart';
-import '../../../compiler/compiler.dart' as compiler;
-import '../../../compiler/implementation/source_file_provider.dart'
-    show FormattingDiagnosticHandler, CompilerSourceFileProvider;
-import '../../../compiler/implementation/filenames.dart'
-    show appendSlash;
+//import '../../../compiler/compiler.dart' as compiler;
+//import '../../../compiler/implementation/source_file_provider.dart'
+//    show FormattingDiagnosticHandler, CompilerSourceFileProvider;
+//import '../../../compiler/implementation/filenames.dart'
+//   show appendSlash;
 
-import 'io.dart';
+import '_io.dart';
 import 'sdk.dart' as sdk;
 import 'utils.dart';
 

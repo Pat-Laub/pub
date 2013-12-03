@@ -6,7 +6,7 @@ library pub.package;
 
 import 'package:path/path.dart' as path;
 
-import 'io.dart';
+//import 'io.dart';
 import 'pubspec.dart';
 import 'source_registry.dart';
 import 'version.dart';

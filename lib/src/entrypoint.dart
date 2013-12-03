@@ -8,8 +8,8 @@ import 'dart:async' hide TimeoutException;
 
 import 'package:path/path.dart' as path;
 
-import 'git.dart' as git;
-import 'io.dart';
+//import 'git.dart' as git;
+//import 'io.dart';
 import 'lock_file.dart';
 import 'log.dart' as log;
 import 'package.dart';
@@ -324,27 +324,27 @@ class Entrypoint {
   Future<List<String>> packageFiles({String beneath}) {
     if (beneath == null) beneath = root.dir;
 
-    return git.isInstalled.then((gitInstalled) {
-      if (dirExists(path.join(root.dir, '.git')) && gitInstalled) {
-        // Later versions of git do not allow a path for ls-files that appears
-        // to be outside of the repo, so make sure we give it a relative path.
-        var relativeBeneath = path.relative(beneath, from: root.dir);
+//    return git.isInstalled.then((gitInstalled) {
+//      if (dirExists(path.join(root.dir, '.git')) && gitInstalled) {
+//        // Later versions of git do not allow a path for ls-files that appears
+//        // to be outside of the repo, so make sure we give it a relative path.
+//        var relativeBeneath = path.relative(beneath, from: root.dir);
+//
+//        // List all files that aren't gitignored, including those not checked
+//        // in to Git.
+//        return git.run(
+//            ["ls-files", "--cached", "--others", "--exclude-standard",
+//             relativeBeneath],
+//            workingDir: root.dir).then((files) {
+//          // Git always prints files relative to the project root, but we want
+//          // them relative to the working directory. It also prints forward
+//          // slashes on Windows which we normalize away for easier testing.
+//          return files.map((file) => path.normalize(path.join(root.dir, file)));
+//        });
+//      }
+//    }).then((files) {
+    var files = listDir(beneath, recursive: true);
 
-        // List all files that aren't gitignored, including those not checked
-        // in to Git.
-        return git.run(
-            ["ls-files", "--cached", "--others", "--exclude-standard",
-             relativeBeneath],
-            workingDir: root.dir).then((files) {
-          // Git always prints files relative to the project root, but we want
-          // them relative to the working directory. It also prints forward
-          // slashes on Windows which we normalize away for easier testing.
-          return files.map((file) => path.normalize(path.join(root.dir, file)));
-        });
-      }
-
-      return listDir(beneath, recursive: true);
-    }).then((files) {
       return files.where((file) {
         // Skip directories and broken symlinks.
         if (!fileExists(file)) return false;
@@ -353,6 +353,6 @@ class Entrypoint {
         if (_BLACKLISTED_FILES.contains(path.basename(relative))) return false;
         return !path.split(relative).any(_BLACKLISTED_DIRS.contains);
       }).toList();
-    });
+//    });
   }
 }

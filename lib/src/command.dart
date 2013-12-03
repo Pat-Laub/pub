@@ -4,27 +4,27 @@
 
 library pub.command;
 
-import 'dart:io';
+//import 'dart:io';
 import 'dart:async' hide TimeoutException;
 
 import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
 import 'package:stack_trace/stack_trace.dart';
 
-import 'command/build.dart';
-import 'command/cache.dart';
+//import 'command/build.dart';
+//import 'command/cache.dart';
 import 'command/get.dart';
-import 'command/help.dart';
-import 'command/lish.dart';
-import 'command/list_package_dirs.dart';
-import 'command/serve.dart';
-import 'command/upgrade.dart';
-import 'command/uploader.dart';
-import 'command/version.dart';
+//import 'command/help.dart';
+//import 'command/lish.dart';
+//import 'command/list_package_dirs.dart';
+//import 'command/serve.dart';
+//import 'command/upgrade.dart';
+//import 'command/uploader.dart';
+//import 'command/version.dart';
 import 'entrypoint.dart';
 import 'exit_codes.dart' as exit_codes;
-import 'http.dart';
-import 'io.dart';
+//import 'http.dart';
+//import 'io.dart';
 import 'log.dart' as log;
 import 'system_cache.dart';
 import 'utils.dart';
@@ -177,29 +177,29 @@ and include the results in a bug report on http://dartbug.com/new.
   /// Returns the appropriate exit code for [exception], falling back on 1 if no
   /// appropriate exit code could be found.
   int _chooseExitCode(exception) {
-    if (exception is HttpException || exception is HttpException ||
-        exception is SocketException || exception is PubHttpException) {
-      return exit_codes.UNAVAILABLE;
-    } else if (exception is FormatException) {
-      return exit_codes.DATA;
-    } else {
+//    if (exception is HttpException || exception is HttpException ||
+//        exception is SocketException || exception is PubHttpException) {
+//      return exit_codes.UNAVAILABLE;
+//    } else if (exception is FormatException) {
+//      return exit_codes.DATA;
+//    } else {
       return 1;
-    }
+//    }
   }
 }
 
 _initCommands() {
   var commands = {
-    'build': new BuildCommand(),
-    'cache': new CacheCommand(),
+//    'build': new BuildCommand(),
+//    'cache': new CacheCommand(),
     'get': new GetCommand(),
-    'help': new HelpCommand(),
-    'list-package-dirs': new ListPackageDirsCommand(),
-    'publish': new LishCommand(),
-    'serve': new ServeCommand(),
-    'upgrade': new UpgradeCommand(),
-    'uploader': new UploaderCommand(),
-    'version': new VersionCommand()
+//    'help': new HelpCommand(),
+//    'list-package-dirs': new ListPackageDirsCommand(),
+//    'publish': new LishCommand(),
+//    'serve': new ServeCommand(),
+//    'upgrade': new UpgradeCommand(),
+//    'uploader': new UploaderCommand(),
+//    'version': new VersionCommand()
   };
 
   for (var command in commands.values.toList()) {

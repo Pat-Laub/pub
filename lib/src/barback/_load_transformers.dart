@@ -10,7 +10,7 @@ import 'dart:isolate';
 
 import 'package:barback/barback.dart';
 // TODO(nweiz): don't import from "src" once issue 14966 is fixed.
-import 'package:barback/src/internal_asset.dart';
+//import 'package:barback/src/internal_asset.dart';
 import 'package:source_maps/source_maps.dart';
 
 import '../barback.dart';

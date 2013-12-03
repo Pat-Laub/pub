@@ -15,7 +15,7 @@ import '../barback.dart' as barback;
 import '../command.dart';
 import '../entrypoint.dart';
 import '../exit_codes.dart' as exit_codes;
-import '../io.dart';
+import '../_io.dart';
 import '../log.dart' as log;
 import '../utils.dart';
 

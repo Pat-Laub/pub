@@ -8,7 +8,7 @@ import 'dart:async' hide TimeoutException;
 
 import 'package:path/path.dart' as path;
 
-import '../io.dart';
+import '../_io.dart';
 import '../package.dart';
 import '../pubspec.dart';
 import '../source.dart';

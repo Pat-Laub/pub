@@ -10,14 +10,13 @@ import 'dart:io';
 import 'package:analyzer/analyzer.dart';
 import 'package:barback/barback.dart';
 import 'package:path/path.dart' as path;
-
-import '../../../../compiler/compiler.dart' as compiler;
-import '../../../../compiler/implementation/dart2js.dart'
-    show AbortLeg;
-import '../../../../compiler/implementation/source_file.dart';
+//import '../../../../compiler/compiler.dart' as compiler;
+//import '../../../../compiler/implementation/dart2js.dart'
+//    show AbortLeg;
+//import '../../../../compiler/implementation/source_file.dart';
 import '../barback.dart';
 import '../dart.dart' as dart;
-import '../io.dart';
+import '../_io.dart';
 import '../package.dart';
 import '../package_graph.dart';
 
